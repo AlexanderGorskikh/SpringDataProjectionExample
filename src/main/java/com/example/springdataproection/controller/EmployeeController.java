@@ -18,6 +18,12 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
     @GetMapping
+    @RequestMapping("home")
+    public ResponseEntity<?> home(){
+        return ResponseEntity.ok("hello");
+    }
+
+    @GetMapping
     public ResponseEntity<List<EmployeeProjection>> getAllCompanyEmployees() {
         return ResponseEntity.ok(employeeService.getEmployees());
     }
